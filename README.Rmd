@@ -16,20 +16,27 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-```{r,message=FALSE,warning=FALSE}
+```{r,echo = F,message=FALSE,warning=FALSE}
 
 library(magrittr)
-library(plotly)
+library(ggplot2)
+
 df<- readr::read_rds('data/df_covid19.rds')
 
 ```
 
-```{r}
+
+```{r , echo = F, warning = F, message = F, fig.align = "center", fig.width = 11, fig.height = 7}
 df %>% 
   dplyr::group_by(estado) %>% 
   dplyr::mutate(total_casos = max(casos_acumulado)) %>% 
   dplyr::select(estado,total_casos) %>% 
-  dplyr::distinct() 
+  dplyr::distinct() %>% 
+  ggplot()+
+  geom_bar(aes(x = estado,y=total_casos), stat = "identity",
+           color = "black", fill = "blue")+
+  theme_dark()
+
 ```
 
 
