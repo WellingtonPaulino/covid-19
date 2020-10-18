@@ -7,11 +7,6 @@
 
 <!-- badges: end -->
 
-The goal of covid-19 is to …
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
 ``` r
 summary(cars)
 #>      speed           dist       
@@ -22,13 +17,3 @@ summary(cars)
 #>  3rd Qu.:19.0   3rd Qu.: 56.00  
 #>  Max.   :25.0   Max.   :120.00
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-![](README_files/figure-gfm/pressure-1.png)<!-- -->
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
