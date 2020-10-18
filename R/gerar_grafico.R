@@ -1,6 +1,5 @@
 
-
-
+library(plotly)
 
 criar_grafico_estado <- function(df,Estado){
 
@@ -19,7 +18,6 @@ criar_grafico_estado <- function(df,Estado){
 
 
 }
-
 
 
 
