@@ -16,8 +16,20 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-```{r cars}
-summary(cars)
+```{r,message=FALSE,warning=FALSE}
+
+library(magrittr)
+library(plotly)
+df<- readr::read_rds('data/df_covid19.rds')
+
+```
+
+```{r}
+df %>% 
+  dplyr::group_by(estado) %>% 
+  dplyr::mutate(total_casos = max(casos_acumulado)) %>% 
+  dplyr::select(estado,total_casos) %>% 
+  dplyr::distinct() 
 ```
 
 
