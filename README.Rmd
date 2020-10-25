@@ -1,0 +1,38 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# covid-19
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+```{r message=FALSE,warning=FALSE}
+
+library(magrittr)
+library(ggplot2)
+
+df<- readr::read_rds('data/df_covid19.rds')
+
+```
+
+
+```{r echo = F, warning = F, message = F, fig.align = "center", fig.width = 11, fig.height = 7}
+df %>% 
+  dplyr::group_by(estado) %>% 
+  dplyr::mutate(total_casos = max(casos_acumulado)) %>% 
+  dplyr::select(estado,total_casos) %>% 
+  dplyr::distinct() 
+
+```
+
+
