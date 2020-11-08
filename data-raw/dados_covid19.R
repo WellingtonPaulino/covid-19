@@ -4,6 +4,7 @@ usethis::use_data(dados_covid19, overwrite = TRUE)
 
 library(tidyverse)
 library(httr)
+library(magrittr)
 
 
 link <- "https://xx9p7hp1p7.execute-api.us-east-1.amazonaws.com/prod/PortalGeral"
